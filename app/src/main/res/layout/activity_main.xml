@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/cl"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.todolist.TodoListActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
+    <com.demo.todo.utils.CustomRecyclerView
         android:id="@+id/rvTodoList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -27,5 +27,9 @@
         android:src="@drawable/ic_add_plus"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <include
+        android:id="@+id/emptyView"
+        layout="@layout/layou_empty_view"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.room.Room
 import com.demo.todo.data.TodoListDataBase
 import com.demo.todo.data.dao.TodoListDao
-import com.demo.todo.data.repositories.TodoListRepository
+import com.demo.todo.data.repository.TodoListRepository
 import com.demo.todo.ui.createtodo.CreateTotoItemActivity
 import com.google.gson.Gson
 import dagger.Module

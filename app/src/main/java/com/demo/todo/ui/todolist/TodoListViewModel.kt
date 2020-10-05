@@ -4,8 +4,8 @@ import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.demo.todo.data.model.TodoItem
-import com.demo.todo.data.repositories.TodoListRepository
+import com.demo.todo.data.models.TodoItem
+import com.demo.todo.data.repository.TodoListRepository
 import kotlinx.coroutines.launch
 
 class TodoListViewModel @ViewModelInject constructor(

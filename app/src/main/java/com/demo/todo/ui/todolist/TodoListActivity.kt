@@ -55,6 +55,7 @@ class TodoListActivity : AppCompatActivity() {
         rvTodoList.run {
             layoutManager = LinearLayoutManager(this@TodoListActivity)
             adapter = todoListAdapter
+            setEmptyView(emptyView)
         }
     }
 

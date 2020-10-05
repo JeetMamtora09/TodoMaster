@@ -2,7 +2,7 @@ package com.demo.todo.data.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.demo.todo.data.model.TodoItem
+import com.demo.todo.data.models.TodoItem
 
 @Dao
 interface TodoListDao {

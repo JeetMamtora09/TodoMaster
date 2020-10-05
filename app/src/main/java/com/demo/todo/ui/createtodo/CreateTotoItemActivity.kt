@@ -7,7 +7,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.doAfterTextChanged
 import com.demo.todo.R
-import com.demo.todo.data.model.TodoItem
+import com.demo.todo.data.models.TodoItem
 import com.demo.todo.utils.EXTRA_TODO_OBJECT
 import com.demo.todo.utils.hideKeyboard
 import com.demo.todo.utils.showToast

@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.item_incomplete_todo_list.view.*
 
 class TodoListAdapter(
     private val genericList: ArrayList<GenericModel>,
-    private val deleteCallBack: (todoItem: TodoItem, action: Int) -> Unit
+    private val callBack: (todoItem: TodoItem, action: Int) -> Unit
 ) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -84,7 +84,7 @@ class TodoListAdapter(
                     tvTitle.text = genericModel.taskName
                     tvDescription.text = genericModel.taskDescription
                     imgDelete.setOnClickListener {
-                        deleteCallBack.invoke(
+                        callBack.invoke(
                             genericList[holder.adapterPosition] as TodoItem,
                             ACTION_DELETE_TODO
                         )
@@ -93,10 +93,10 @@ class TodoListAdapter(
                     checkCompleteTodo.setOnClickListener {
                         val mTodoItem: TodoItem = genericList[holder.adapterPosition] as TodoItem
                         mTodoItem.isCompleted = true
-                        deleteCallBack.invoke(mTodoItem, ACTION_COMPLETE_TODO)
+                        callBack.invoke(mTodoItem, ACTION_COMPLETE_TODO)
                     }
                     clContainer.setOnClickListener {
-                        deleteCallBack.invoke(
+                        callBack.invoke(
                             genericList[holder.adapterPosition] as TodoItem,
                             ACTION_OPEN_TODO
                         )
@@ -110,9 +110,15 @@ class TodoListAdapter(
                     tvDescription.text = genericModel.taskDescription
 
                     clContainer.setOnClickListener {
-                        deleteCallBack.invoke(
+                        callBack.invoke(
                             genericList[holder.adapterPosition] as TodoItem,
                             ACTION_OPEN_TODO
+                        )
+                    }
+                    imgDelete.setOnClickListener {
+                        callBack.invoke(
+                            genericList[holder.adapterPosition] as TodoItem,
+                            ACTION_DELETE_TODO
                         )
                     }
                 }
