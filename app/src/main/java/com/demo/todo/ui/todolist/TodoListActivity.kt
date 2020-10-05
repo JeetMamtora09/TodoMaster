@@ -2,15 +2,14 @@ package com.demo.todo.ui.todolist
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.demo.todo.R
-import com.demo.todo.data.model.GenericModel
-import com.demo.todo.data.model.HeaderModel
-import com.demo.todo.data.model.TodoItem
+import com.demo.todo.data.models.GenericModel
+import com.demo.todo.data.models.HeaderModel
+import com.demo.todo.data.models.TodoItem
 import com.demo.todo.ui.createtodo.CreateTotoItemActivity
 import com.demo.todo.utils.*
 import com.google.gson.Gson
@@ -62,7 +61,7 @@ class TodoListActivity : AppCompatActivity() {
     private fun checkActionPerformClick(todoItem: TodoItem, action: Int) {
         when (action) {
             ACTION_DELETE_TODO ->
-                showTwoButtonAlertDialog(message = "Are you sure you want to delete this todo?") {
+                showTwoButtonAlertDialog(message = getString(R.string.str_msg_confirmation_delete_todo)) {
                     todoListViewModel.deleteTodoItem(todoItem)
                 }
             ACTION_COMPLETE_TODO -> {
@@ -85,14 +84,14 @@ class TodoListActivity : AppCompatActivity() {
 
     private fun setObserver() {
         todoListViewModel.getTodoListMutableLiveData().observe(this, Observer {
-            Log.d("SIzeOfList=>>>", "$it.size")
             val inCompleteTodoList = it.filter { todoItem -> !todoItem.isCompleted }
             val completedTask = it.filter { todoItem -> todoItem.isCompleted }
             val genericModelList = ArrayList<GenericModel>()
             genericModelList.run {
                 addAll(inCompleteTodoList)
                 if (completedTask.isNotEmpty()) {
-                    val headerCompletedTask = HeaderModel("Completed Task")
+                    val headerCompletedTask =
+                        HeaderModel(getString(R.string.str_header_name_completed))
                     add(headerCompletedTask)
                     addAll(completedTask)
                 }

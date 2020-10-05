@@ -19,6 +19,7 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class CreateTotoItemActivity : AppCompatActivity() {
     private val createTodoItemViewModel: CreateTodoItemViewModel by viewModels()
+
     @Inject
     lateinit var gson: Gson
     private lateinit var menuItem: MenuItem
@@ -32,8 +33,10 @@ class CreateTotoItemActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         todoItem?.run {
-            if (isCompleted) return false
-            title = "Completed Todo"
+            if (isCompleted) {
+                title = getString(R.string.str_title_completed_todo)
+                return false
+            }
         }
         val inflater = menuInflater
         inflater.inflate(R.menu.menu_create_todo_item, menu)
@@ -42,7 +45,7 @@ class CreateTotoItemActivity : AppCompatActivity() {
             if (todoItem != null) {
                 menuItem.isEnabled = false
                 menuItem.icon.alpha = 150
-                title = "Edit Todo"
+                title = getString(R.string.str_title_update_todo)
             }
         }
         return true
@@ -54,7 +57,7 @@ class CreateTotoItemActivity : AppCompatActivity() {
     }
 
     private fun init() {
-        title = "Create Todo"
+        title = getString(R.string.str_title_create_todo)
         if (intent.hasExtra(EXTRA_TODO_OBJECT))
             todoItem =
                 gson.fromJson(

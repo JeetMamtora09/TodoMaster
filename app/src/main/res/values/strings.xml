@@ -3,4 +3,11 @@
     <string name="str_edt_hint_title">Enter title</string>
     <string name="str_edt_hint_description">Enter description</string>
     <string name="str_action_menu_done">Done</string>
+    <string name="str_msg_no_to_do">No todo in you list press on + to create new one.</string>
+    <string name="str_msg_delete_completed_todo">Delete For Completed Todo</string>
+    <string name="str_msg_confirmation_delete_todo">Are you sure you want to delete this todo?</string>
+    <string name="str_header_name_completed">Completed Task</string>
+    <string name="str_title_create_todo">Create Todo</string>
+    <string name="str_title_update_todo">Update Task</string>
+    <string name="str_title_completed_todo">Completed Task</string>
 </resources>

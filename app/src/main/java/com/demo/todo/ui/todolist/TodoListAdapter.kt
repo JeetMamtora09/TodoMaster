@@ -5,9 +5,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.demo.todo.R
-import com.demo.todo.data.model.GenericModel
-import com.demo.todo.data.model.HeaderModel
-import com.demo.todo.data.model.TodoItem
+import com.demo.todo.data.models.GenericModel
+import com.demo.todo.data.models.HeaderModel
+import com.demo.todo.data.models.TodoItem
 import com.demo.todo.utils.*
 import kotlinx.android.synthetic.main.item_header.view.*
 import kotlinx.android.synthetic.main.item_incomplete_todo_list.view.*

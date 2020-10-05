@@ -7,8 +7,8 @@
     card:cardUseCompatPadding="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
         android:id="@+id/clContainer"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?android:attr/selectableItemBackground"
         android:clickable="true"
@@ -56,7 +56,7 @@
             android:adjustViewBounds="true"
             android:background="?android:attr/selectableItemBackgroundBorderless"
             android:clickable="true"
-            android:contentDescription="@string/app_name"
+            android:contentDescription="@string/str_msg_delete_completed_todo"
             android:focusable="true"
             android:src="@drawable/ic_delete"
             app:layout_constraintBottom_toBottomOf="parent"
