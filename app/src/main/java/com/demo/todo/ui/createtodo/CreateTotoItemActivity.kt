@@ -5,11 +5,9 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.widget.doAfterTextChanged
 import com.demo.todo.R
 import com.demo.todo.data.models.TodoItem
 import com.demo.todo.utils.EXTRA_TODO_OBJECT
-import com.demo.todo.utils.hideKeyboard
 import com.demo.todo.utils.showToast
 import com.google.gson.Gson
 import dagger.hilt.android.AndroidEntryPoint
@@ -27,7 +25,7 @@ class CreateTotoItemActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_create_toto_item)
+        setContentView(R.layout.activity_create_todo_item)
         init()
     }
 
