@@ -7,7 +7,7 @@ import com.demo.todo.data.models.TodoItem
 
 @Database(
     entities = [TodoItem::class],
-    version = 1,
+    version = 2,
     exportSchema = false
 )
 abstract class TodoListDataBase : RoomDatabase() {
