@@ -15,20 +15,11 @@ import kotlinx.android.synthetic.main.item_incomplete_todo_list.view.*
 class TodoListAdapter(
     private val genericList: ArrayList<GenericModel>,
     private val callBack: (todoItem: TodoItem, action: Int) -> Unit
-) :
-    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+) :RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     class ViewHolderHeader(itemView: View) : RecyclerView.ViewHolder(itemView)
     class ViewHolderInCompletedTask(itemView: View) : RecyclerView.ViewHolder(itemView)
     class ViewHolderCompletedTask(itemView: View) : RecyclerView.ViewHolder(itemView)
-
-    fun updateTodoList(todoList: List<GenericModel>) {
-        this@TodoListAdapter.genericList.run {
-            clear()
-            addAll(todoList)
-            notifyDataSetChanged()
-        }
-    }
 
     override fun getItemViewType(position: Int): Int {
         genericList[position].run {
@@ -123,6 +114,14 @@ class TodoListAdapter(
                     }
                 }
             }
+        }
+    }
+
+    fun updateTodoList(todoList: List<GenericModel>) {
+        this@TodoListAdapter.genericList.run {
+            clear()
+            addAll(todoList)
+            notifyDataSetChanged()
         }
     }
 }
