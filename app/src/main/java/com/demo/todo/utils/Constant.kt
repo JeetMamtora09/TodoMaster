@@ -39,3 +39,9 @@ const val EXTRA_TODO_OBJECT="todoObject"
  *
  */
 const val DATABASENAME = "todoDb"
+
+/**
+ * table name
+ */
+
+const val TABLENAME = "todoList"
