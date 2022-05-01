@@ -33,3 +33,9 @@ const val VIEW_TYPE_COMPLETED_TASK = 3
 *
 * */
 const val EXTRA_TODO_OBJECT="todoObject"
+
+/**
+ * Database name
+ *
+ */
+const val DATABASENAME = "todoDb"

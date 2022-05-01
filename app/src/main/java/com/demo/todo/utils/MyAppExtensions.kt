@@ -15,22 +15,7 @@ import com.google.android.material.snackbar.Snackbar
 val Activity.contentView: View
     get() = findViewById<ViewGroup>(android.R.id.content).getChildAt(0)
 
-fun Activity.snack(message: String, duration: Int = Snackbar.LENGTH_LONG) {
-    contentView.run {
-        Snackbar.make(this, message, duration).show()
-    }
-}
-
-fun View.snack(message: String, duration: Int = Snackbar.LENGTH_LONG) {
-    Snackbar.make(this, message, duration).show()
-}
-
-
 fun Activity.showToast(message: String, duration: Int = Toast.LENGTH_LONG) {
-    Toast.makeText(this, message, duration).show()
-}
-
-fun Context.showToast(message: String, duration: Int = Toast.LENGTH_LONG) {
     Toast.makeText(this, message, duration).show()
 }
 
@@ -68,7 +53,6 @@ fun Activity.showTwoButtonAlertDialog(
     callBack: () -> Unit
 ) {
     val builder = AlertDialog.Builder(this)
-
     with(builder)
     {
         setTitle(title)
@@ -83,3 +67,20 @@ fun Activity.showTwoButtonAlertDialog(
         show()
     }
 }
+
+fun Activity.snack(message: String, duration: Int = Snackbar.LENGTH_LONG) {
+    contentView.run {
+        Snackbar.make(this, message, duration).show()
+    }
+}
+
+fun View.snack(message: String, duration: Int = Snackbar.LENGTH_LONG) {
+    Snackbar.make(this, message, duration).show()
+}
+
+fun Context.showToast(message: String, duration: Int = Toast.LENGTH_LONG) {
+    Toast.makeText(this, message, duration).show()
+}
+
+
+
