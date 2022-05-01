@@ -6,6 +6,7 @@ import com.demo.todo.data.TodoListDataBase
 import com.demo.todo.data.dao.TodoListDao
 import com.demo.todo.data.repository.TodoListRepository
 import com.demo.todo.ui.createtodo.CreateTotoItemActivity
+import com.demo.todo.utils.DATABASENAME
 import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
@@ -30,7 +31,7 @@ class ApplicationModule {
     fun provideTodoDb(@ApplicationContext app: Context) = Room.databaseBuilder(
         app,
         TodoListDataBase::class.java,
-        "todoDb"
+        DATABASENAME
     ).build()
 
     @Singleton
